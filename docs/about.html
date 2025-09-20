@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphia - About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1A1A33 0%, #331A4D 50%, #1A3366 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #00B4D8;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #9B5DE5, #00B4D8, #FF9F1C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #B8B8FF;
+            margin-bottom: 20px;
+        }
+
+        .version-info {
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid #00B4D8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .version-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00B4D8;
+            margin-bottom: 5px;
+        }
+
+        .build-info {
+            font-size: 0.9rem;
+            color: #B8B8FF;
+        }
+
+        h1 {
+            color: #00B4D8;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #9B5DE5;
+            margin: 30px 0 15px 0;
+            font-size: 1.8rem;
+            border-left: 4px solid #9B5DE5;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #FF9F1C;
+            margin: 20px 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00B4D8;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 0.9rem;
+            color: #B8B8FF;
+        }
+
+        .developer-section {
+            background: rgba(155, 93, 229, 0.1);
+            border: 1px solid #9B5DE5;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .developer-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .developer-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #9B5DE5;
+            margin-bottom: 10px;
+        }
+
+        .developer-title {
+            font-size: 1.1rem;
+            color: #B8B8FF;
+            margin-bottom: 20px;
+        }
+
+        .other-apps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-3px);
+            border-color: #FF9F1C;
+        }
+
+        .app-name {
+            font-weight: bold;
+            color: #FF9F1C;
+            margin-bottom: 5px;
+        }
+
+        .app-description {
+            font-size: 0.8rem;
+            color: #B8B8FF;
+        }
+
+        .contact-info {
+            background: rgba(255, 159, 28, 0.1);
+            border: 1px solid #FF9F1C;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #FF9F1C;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #00B4D8;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #00B4D8;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #00B4D8;
+            color: #1A1A33;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #B8B8FF;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🍃 Morphia</div>
+            <div class="tagline">AI-Powered Photo Transformation</div>
+            
+            <div class="version-info">
+                <div class="version-number">Version 1.0.0</div>
+                <div class="build-info">Build 1.0.0 (2024)</div>
+            </div>
+        </div>
+
+        <h1>About Morphia</h1>
+        
+        <p>Morphia is a cutting-edge iOS application that harnesses the power of artificial intelligence to transform your photos in ways you never imagined possible. Built with the latest AI technology, Morphia brings professional-grade photo editing capabilities right to your fingertips.</p>
+
+        <h2>🌟 Key Features</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🎨</span>
+                <div class="feature-title">Smart Restoration</div>
+                <div class="feature-description">Automatically repair damaged, scratched, or faded photos using advanced AI algorithms</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🌈</span>
+                <div class="feature-title">Intelligent Colorization</div>
+                <div class="feature-description">Bring black and white photos to life with realistic, AI-generated colors</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <div class="feature-title">Combined Processing</div>
+                <div class="feature-description">Restore and colorize photos simultaneously for the ultimate transformation</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📱</span>
+                <div class="feature-title">User-Friendly Interface</div>
+                <div class="feature-description">Intuitive design that makes professional photo editing accessible to everyone</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔒</span>
+                <div class="feature-title">Privacy First</div>
+                <div class="feature-description">Your photos are processed securely and automatically deleted after processing</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <div class="feature-title">Fast Processing</div>
+                <div class="feature-description">Quick AI processing that delivers stunning results in seconds</div>
+            </div>
+        </div>
+
+        <h2>🛠️ Technology</h2>
+        
+        <p>Morphia is built using state-of-the-art technologies:</p>
+        <ul>
+            <li><strong>SwiftUI:</strong> Modern iOS development framework for smooth, native performance</li>
+            <li><strong>AI Proxy:</strong> Custom AI integration layer for seamless processing</li>
+            <li><strong>Replicate AI:</strong> Advanced machine learning models for photo restoration and colorization</li>
+            <li><strong>Firebase Analytics:</strong> Privacy-focused analytics to improve user experience</li>
+            <li><strong>StoreKit:</strong> Secure in-app purchase system for credit management</li>
+        </ul>
+
+        <h2>📱 System Requirements</h2>
+        
+        <ul>
+            <li><strong>iOS:</strong> 15.0 or later</li>
+            <li><strong>Device:</strong> iPhone, iPad, or iPod touch</li>
+            <li><strong>Storage:</strong> 50 MB available space</li>
+            <li><strong>Network:</strong> Internet connection required for AI processing</li>
+        </ul>
+
+        <h2>🎯 How It Works</h2>
+        
+        <p>Morphia makes AI-powered photo transformation simple:</p>
+        <ol>
+            <li><strong>Select Your Photo:</strong> Choose from your photo library or take a new photo</li>
+            <li><strong>Choose Processing Type:</strong> Select restoration, colorization, or both</li>
+            <li><strong>AI Processing:</strong> Our advanced AI analyzes and transforms your photo</li>
+            <li><strong>Save & Share:</strong> Download your transformed photo and share with the world</li>
+        </ol>
+
+        <div class="developer-section">
+            <h2>👨‍💻 Developer</h2>
+            
+            <div class="developer-info">
+                <div class="developer-name">Muhammet Doğan</div>
+                <div class="developer-title">iOS Developer & AI Enthusiast</div>
+                <p>Passionate about creating innovative mobile applications that leverage artificial intelligence to solve real-world problems. With expertise in iOS development, machine learning integration, and user experience design.</p>
+            </div>
+
+            <h3>🚀 Other Applications</h3>
+            <div class="other-apps">
+                <div class="app-card">
+                    <div class="app-name">AI Photo Enhancer</div>
+                    <div class="app-description">Professional photo enhancement using AI</div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-name">Smart Document Scanner</div>
+                    <div class="app-description">OCR-powered document scanning and management</div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-name">Voice Notes AI</div>
+                    <div class="app-description">AI-powered voice transcription and organization</div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-name">Weather AI</div>
+                    <div class="app-description">Intelligent weather forecasting and alerts</div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-title">📧 Get In Touch</div>
+                <div class="contact-links">
+                    <a href="mailto:developer@morphia.app" class="contact-link">Email</a>
+                    <a href="https://github.com/muhammetdogan" class="contact-link">GitHub</a>
+                    <a href="https://linkedin.com/in/muhammetdogan" class="contact-link">LinkedIn</a>
+                    <a href="https://twitter.com/muhammetdogan" class="contact-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Morphia. All rights reserved.</p>
+            <p>Made with ❤️ and AI in Turkey</p>
+        </div>
+    </div>
+</body>
+</html>
